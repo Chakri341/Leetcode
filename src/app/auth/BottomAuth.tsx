@@ -1,13 +1,24 @@
-import AuthModal from "@/components/modals/AuthModal";
+"use client"
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { AuthModalAtom } from "@/atoms/AuthModalAtom";
+import AuthModal from "@/modals/AuthModal";
+import { useRecoilValue } from "recoil";
+
 
 type BottomAuthProps = {}
 
 const BottomAuth: React.FC<BottomAuthProps> = () => {
+
+    const AuthModalAtomState = useRecoilValue(AuthModalAtom);
+    
+
+
+
     return (
         <div className="flex flex-col justify-between h-screen ">
+
+            {AuthModalAtomState.isOpen && <AuthModal />}
 
             <div className="flex justify-center items-center h-4/5 p-8">
                 <div className="max-w-md md:max-w-lg lg:max-w-xl text-center">
@@ -27,7 +38,10 @@ const BottomAuth: React.FC<BottomAuthProps> = () => {
 
                 </div>
             </div>
-            <AuthModal />
+
+
+
+
             <footer className="bg-gray-900 text-gray-300 py-8 mt-10">
                 <div className="container mx-auto px-8">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
