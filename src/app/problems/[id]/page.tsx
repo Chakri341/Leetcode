@@ -1,15 +1,18 @@
+import Topbar from '@/components/Topbar/Topbar';
+import WorkSpace from '@/components/WorkSpace/WorkSpace';
 import React from 'react';
 
 type pageProps = {
 
 };
 
-const page: React.FC<pageProps> = ({params}:any) => {
+const page: React.FC<pageProps> = ({ params }: any) => {
 
     return (
         <div>
-            <h1>Have a good coding</h1>
-            <h1>Params : {params.id}</h1>
+            <Topbar problemPage={true} />
+            {/* <h1>Params : {params.id}</h1> */}
+            <WorkSpace />
         </div>
     )
 }

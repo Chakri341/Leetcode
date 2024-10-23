@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { problems } from '@/mock problems/mock';
 import Image from 'next/image';
 import YouTube from 'react-youtube';
+import Link from 'next/link';
 
 type ProblemsTableProps = {
 
@@ -80,9 +81,10 @@ const ProblemsTable: React.FC<ProblemsTableProps> = () => {
                                             alt='status logo'
                                         />
                                     </td>
-
                                     <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        {item.title}
+                                        <Link href={`/problems/${item.id}`}>
+                                            {item.title}
+                                        </Link>
                                     </th>
                                     <td className="px-6 py-4">
                                         {item.difficulty}
@@ -112,7 +114,7 @@ const ProblemsTable: React.FC<ProblemsTableProps> = () => {
                 </table>
             </div>
 
-            
+
 
             {youtubePlayer.isOpen && (
                 <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
