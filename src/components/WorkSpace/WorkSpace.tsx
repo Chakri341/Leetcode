@@ -17,7 +17,9 @@ const WorkSpace: React.FC<WorkSpaceProps> = () => {
         >
             <ProblemDescription/>
             <CodePlayground/>
-        </Split></div>
+        </Split>
+        
+        </div>
     )
 }
 export default WorkSpace;

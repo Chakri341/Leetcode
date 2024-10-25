@@ -26,6 +26,8 @@ body {
   }
 }
 
+
+
 .split {
   display: flex;
   flex-direction: row;
@@ -89,4 +91,15 @@ code {
 .hover-image:hover {
   filter: invert(30%) sepia(100%) saturate(6000%) hue-rotate(190deg) brightness(95%) contrast(110%);
 }
+
+
+/* CODE EDITOR*/
+/* .cm-scroller,
+.cm-gutters {
+	background-color: #282828 !important;
+}
+.cm-focused {
+	outline: none !important;
+} */
+
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import PreferenceNav from '../WorkSpace/PreferenceNav';
 
 type CodeEditorProps = {
     
@@ -7,12 +8,8 @@ type CodeEditorProps = {
 const CodeEditor:React.FC<CodeEditorProps> = () => {
     
     return (
-    <div className='w-full h-1/2'>
-        <h1>Code Editor</h1>
-        <h1>Code Editor</h1>
-        <h1>Code Editor</h1>
-        <h1>Code Editor</h1>
-        <h1>Code Editor</h1>
+    <div className='w-full'>
+        <PreferenceNav/>
     </div>
 )
 }
