@@ -1,7 +1,9 @@
 import Image from "next/image";
 import React from "react";
 
-type ProblemDescriptionProps = {};
+type ProblemDescriptionProps = {
+  
+};
 
 const ProblemDescription: React.FC<ProblemDescriptionProps> = () => {
     return (
@@ -18,7 +20,7 @@ const ProblemDescription: React.FC<ProblemDescriptionProps> = () => {
                     {/* Problem heading */}
                     <div className='w-full'>
                         <div className='flex space-x-4'>
-                            <div className='flex-1 mr-2 text-2xl text-black'>1. Two Sum</div>
+                            <div className='flex-1 mr-2 text-2xl text-black'>{"1. Two Sum"}</div>
                         </div>
                         <div className='flex items-center mt-3'>
                             <div

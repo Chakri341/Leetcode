@@ -1,30 +1,33 @@
-
-import React from "react";
+ "use client"
+import React, { useState } from "react";
 import PreferenceNav from "../WorkSpace/PreferenceNav";
 import Split from "react-split";
 import CodeMirror from "@uiw/react-codemirror";
-import { vscodeDark, vscodeLight } from "@uiw/codemirror-theme-vscode"; // Light theme import
+import { vscodeDark, vscodeLight } from "@uiw/codemirror-theme-vscode"; 
 import { javascript } from "@codemirror/lang-javascript";
 import SubmitCode from "../SubmitCode/SubmitCode";
 
-type PlaygroundProps = {};
+type PlaygroundProps = {
+	
+};
 
 const CodePlayground: React.FC<PlaygroundProps> = () => {
+	const [isDarkMode, setisDarkMode] = useState(false);
 	return (
-		<div className="flex flex-col relative overflow-x-hidden h-full bg-white"> {/* Light background */}
-			<PreferenceNav />
+		<div className="flex flex-col relative overflow-x-hidden h-full bg-white"> 
+			<PreferenceNav isDarkMode={isDarkMode}  setisDarkMode={setisDarkMode} />
 
 			<Split className="h-[calc(100vh-94px)]" direction="vertical" sizes={[60, 40]} minSize={60}>
-				<div className="w-full h-full overflow-auto "> {/* Light background for the whole editor area */}
+				<div className="w-full h-full overflow-auto "> 
 					<CodeMirror
 						value="const a = 1"
-						theme={vscodeDark} // Light theme applied
+						theme={isDarkMode ? vscodeDark : vscodeLight} 
 						extensions={[javascript()]}
 						style={{ 
 							fontSize: 16, 
 							height: "100%", 
-							backgroundColor: "#000",  // Make sure the background is light gray
-							color: "#000", // Ensure the text color is black for contrast
+							backgroundColor: isDarkMode ? "#000" :  '#fff',  
+							color: isDarkMode ? "#fff" : "#000", 
 						}} 
 					/>
 				</div>

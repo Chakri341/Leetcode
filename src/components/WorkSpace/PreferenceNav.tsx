@@ -1,11 +1,13 @@
 import Image from "next/image";
 import React, { useState } from "react";
 
-type PreferenceNavProps = {};
+type PreferenceNavProps = {
+  isDarkMode:boolean,
+  setisDarkMode:React.Dispatch<React.SetStateAction<boolean>>;
+};
 
-const PreferenceNav: React.FC<PreferenceNavProps> = () => {
+const PreferenceNav: React.FC<PreferenceNavProps> = ({isDarkMode, setisDarkMode}) => {
 
-  const [isDarkMode, setisDarkMode] = useState(false);
 
   const toggleTheme=()=>{
     setisDarkMode(!isDarkMode);
@@ -31,7 +33,7 @@ const PreferenceNav: React.FC<PreferenceNavProps> = () => {
             height={23}
             width={23}
             alt="settings icon"
-            className="hover-image"
+            className=""
           />
           {/* Hidden name, appears on hover */}
           <span className="absolute top-6 left-1/2 transform -translate-x-1/2 mt-1 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200">
@@ -45,7 +47,7 @@ const PreferenceNav: React.FC<PreferenceNavProps> = () => {
             height={20}
             width={20}
             alt="settings icon"
-            className="hover-image"
+            className=""
           />
           {/* Hidden name, appears on hover */}
           <span className="absolute top-6 left-1/2 transform -translate-x-1/2 mt-1 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200">
@@ -60,7 +62,7 @@ const PreferenceNav: React.FC<PreferenceNavProps> = () => {
             height={20}
             width={20}
             alt="expand icon"
-            className="blue-image"
+            className=""
           />
           {/* Hidden name, appears on hover */}
           <span className="absolute top-6 left-1/2 transform -translate-x-1/2 mt-1 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-200">
